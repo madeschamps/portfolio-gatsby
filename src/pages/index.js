@@ -1,7 +1,8 @@
 import React, { Component } from "react"
-import { Link, graphql } from "gatsby"
+import { graphql } from "gatsby"
+import Link from "gatsby-plugin-transition-link";
 import { FaRegClock } from "react-icons/fa"
-import {TweenMax, TweenLite, TimelineLite} from "gsap/TweenMax";
+import {TimelineLite} from "gsap/TweenMax";
 import { Controller, Scene } from 'react-scrollmagic';
 import { Tween, Timeline } from 'react-gsap';
 import $ from 'jquery';
@@ -26,22 +27,29 @@ class Home extends Component {
     this.lettersM = null;
     this.letterStrike = null;
     this.lastName = null;
-    // reference to the animation
-    this.myTween = null;
-
-
+   
   }
 
   componentDidMount(){
 
     //Eases: https://easings.net/
    
-    // $(document).ready(function() { 
-      // $("html").niceScroll();
-    // });
+    $(document).ready(function() { 
+      // // $("html").niceScroll();
+      // $('.header__logo-link').click(function(){
+      //   console.log('cok');
+      //   $('.tl-edges').addClass('tl-edges--relative');
+      //   setTimeout(function(){
+      //     $('.tl-wrapper').removeClass('tl-edges--relative');
+      //   }, 3000);
 
-    //instantiate a TimelineLite    
+      // })
+    });
+
+    // instantiate a TimelineLite    
     var tl = new TimelineLite(); 
+
+    // use the node refs to create the animations
     tl.to(this.welcome, 2, { 
       opacity: 1,
       top: '34vh',
@@ -83,20 +91,12 @@ class Home extends Component {
       top: -30,
       ease: "easeOutBack"
     });
-
-    // use the node ref to create the animation
-    // this.myTween = TweenLite.to(this.myElement, 1, { y: 20,});
-    //this.myTween = TweenLite.to(this.letterA, 1, { visibility:'visible', left: 0,});
-
-    //this.myTween = TweenLite.to(this.lettersM, 2, { visibility:'visible', left: 0,});
-    // this.myTween = TweenLite.to(this.lettersA, 1, { visibility:'visible', x: 20,});
   }
 
   render() {
 
     const data = this.props.data
     var imgUrl = 'https://images.fineartamerica.com/images-medium-large/crashing-waves-black-and-white-hideaki-sakurai.jpg';
-    var imgUrl2 = 'https://upload.wikimedia.org/wikipedia/commons/0/0b/Hemisphere_land.png';
     var divStyle = {
       color: 'white',
       backgroundImage: 'url(' + imgUrl + ')',
@@ -105,16 +105,6 @@ class Home extends Component {
       msTransition: 'all' // 'ms' is the only lowercase vendor prefix
     };
 
-    var divStyleEarth = {
-      color: 'white',
-      backgroundImage: 'url(' + imgUrl2 + ')',
-      backgroundSize: 'cover',
-      WebkitTransition: 'all', // note the capital 'W' here
-      msTransition: 'all' // 'ms' is the only lowercase vendor prefix
-    };
-
-    
-    
     return (
       <Layout>
         {/* SECTION 1 */}
@@ -138,35 +128,23 @@ class Home extends Component {
         </div>
         {/* SECTION2 */}
         <div className='section sceneScroll1'>
-         
           <div className='row align-items-center justify-content-center h-100'>
-            <div className='col-lg-12  bgc-neutral-light'> 
-             
-            </div>
             <div id="triggerS1HorizontalText" />
             <div className='col-lg-12 h-100 d-flex align-items-center bgc-neutral-light overflow-hidden'> 
               <Controller>
-                <Scene //Scene 1 Move Plane
-                  triggerElement="#triggerS1HorizontalText" duration={1000} 
-                >
-                {(progress) => (
-                     
-                     <Tween            
-                      to={{ 
-                        scale: '1.5',
-                        backgroundPosition: '-150% center',
-                        x: '-800px'
-                      }}    
+                <Scene //Scene 1 From Mtl to London
+                  triggerElement="#triggerS1HorizontalText" duration={1000}>
+                  {(progress) => (
+                    <Tween to={{  scale: '1.5', backgroundPosition: '-150% center', x: '-800px' }}    
                       ease="Strong.easeOut"
                       totalProgress={progress}
                       paused
-                    > 
-                      <p className='scene1__fromMtl'>FROM MONTRÉAL TO LONDON</p>
+                      > 
+                        <p className='scene1__fromMtl'>FROM MONTRÉAL TO LONDON</p>
                     </Tween>
- 
                   )}
                 </Scene> 
-                <Scene //Scene 1 Move Plane
+                <Scene //Scene 1 Move Plane from left to right
                   triggerElement="#triggerS1HorizontalText" duration={1500} >
                 {(progress) => (
                     <Tween            
@@ -185,16 +163,16 @@ class Home extends Component {
                   )}
                 </Scene> 
               </Controller> 
-              {/* <img className="bg-sky" src="https://svgur.com/i/C0K.svg" />  IMG LONDON */}
             </div>
           </div>
         </div>   
-        <div className='container-fluid section  bgc-neutral-light '>
+        <div className='container-fluid section  bgc-neutral-light'>
           <div className='row h-50 justify-content-center'>
             <div id="triggerS1FrontTxt" />
             <div className='col-lg-4 offset-lg-1'>
             <Controller>
-              <Scene  triggerElement="#triggerS1HorizontalText" duration={1500} >
+              <Scene //Scene 1 I am a Web Dev intro text
+              triggerElement="#triggerS1HorizontalText" duration={1500} >
                   {(progress) => (
                     <Tween 
                       to={{
@@ -215,12 +193,10 @@ class Home extends Component {
               <Controller>
                 <Scene triggerElement="#triggerS1FrontTxt"  classToggle="scene1__frontdev--animation">
                   {(progress, event) => (   
-                      
                       <span className='font-dots scene1__frontdev'>FRONT-END DEVELOPPER</span>
-                    
                     )}
                   </Scene> 
-                </Controller>
+              </Controller>
             </div>
           </div>
         </div>  
@@ -231,7 +207,7 @@ class Home extends Component {
                   <div className='scene2 container-fluid h-100vh '>
                     <div className='row h-100 align-items-center justify-content-center'>
                       <div className='col-md-12 text-center'>
-                        <AniLink paintDrip  hex="#3b3a36" to="/projects" className="scene2__link d-inline-block mb-3">SEE MY RECENT WORK</AniLink>
+                        <AniLink paintDrip hex="#3b3a36" to="/projects" className="scene2__link d-inline-block mb-3">SEE MY RECENT WORK</AniLink>
                         <span className="d-block">Need a developer? Contact here marc.andre.deschamps@gmail.com</span>
                       </div>
                   </div>
@@ -248,8 +224,8 @@ class Home extends Component {
                   <div>
                     <div className='d-block mb-4'>
                       <h2 className='d-block mb-4 textc-primary'>Find me here also</h2>
-                      <Link to='/' className='scene3__link textc-primary'><i className="tempBigIcon fab fa-linkedin mr-3"></i></Link>
-                      <Link to='/' className='scene3__link textc-primary'><i className="tempBigIcon fab fa-github mr-3"></i></Link>
+                      <a href="#" target="_blank" className='scene3__link textc-primary'><i className="tempBigIcon fab fa-linkedin mr-3"></i></a>
+                      <a href="#" target="_blank" className='scene3__link textc-primary'><i className="tempBigIcon fab fa-github mr-3"></i></a>
                     </div>
                   </div>
                 </div>
@@ -257,36 +233,6 @@ class Home extends Component {
             </div>
           </Scene>
         </Controller>
-        <hr></hr>      
-        <div>
-          <h1>Pages</h1>
-          {data.allWordpressPage.edges.map(({ node }) => (
-            <div key={node.slug}>
-              <Link to={node.slug} css={{ textDecoration: `none` }}>
-                <h3>{node.title}</h3>
-              </Link>
-              <div dangerouslySetInnerHTML={{ __html: node.excerpt }} />
-              <span>
-                <FaRegClock
-                  size={14}
-                  css={{ position: `relative`, bottom: 1 }}
-                />
-                {` `}
-                {node.date}
-              </span>
-            </div>
-          ))}
-        </div>
-        <hr />
-        <h1>Posts</h1>
-        {data.allWordpressPost.edges.map(({ node }) => (
-          <div css={{ marginBottom: 20 }} key={node.slug}>
-            <Link to={node.slug} css={{ textDecoration: `none` }}>
-              <h3>{node.title}</h3>
-            </Link>
-            <div dangerouslySetInnerHTML={{ __html: node.excerpt }} />
-          </div>
-        ))}
       </Layout>
     )
   }
@@ -314,7 +260,6 @@ export const pageQuery = graphql`
           title
           excerpt
           slug
-          ...PostIcons
         }
       }
     }

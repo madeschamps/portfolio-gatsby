@@ -17,6 +17,15 @@ h3{
 @include font-normal(bold, $base-color);
 }
 
+/*Page transition with scrollsAnims*/
+.tl-edges-child--relative > div{
+    position: relative;
+}
+.tl-wrapper{//removes issues for scrollMagicAnimations
+    position: absolute;
+}
+
+
 .textc-base{
     color:$base-color;
 }
@@ -172,7 +181,7 @@ h3{
 }
 .projects-list{
     position: relative;
-    top: 125px;
+    top: -100px;
 }
 .project-item{
     align-items: center;
