@@ -1,43 +1,54 @@
 {
-  "name": "gatsby-starter-default",
+  "name": "gatsby-example-using-wordpress",
   "private": true,
-  "description": "A simple starter to get up and developing quickly with Gatsby",
-  "version": "0.1.0",
-  "author": "Kyle Mathews <mathews.kyle@gmail.com>",
+  "description": "Gatsby example site using the Wordpress source plugin",
+  "version": "1.0.0-beta.6",
+  "author": "Sebastien Fichot <fichot.sebastien@gmail.com>",
   "dependencies": {
-    "gatsby": "^2.1.19",
-    "gatsby-image": "^2.0.30",
-    "gatsby-plugin-manifest": "^2.0.20",
-    "gatsby-plugin-offline": "^2.0.24",
-    "gatsby-plugin-react-helmet": "^3.0.7",
-    "gatsby-plugin-sharp": "^2.0.23",
+    "bootstrap": "^4.3.1",
+    "gatsby": "^2.0.0",
+    "gatsby-image": "^2.0.5",
+    "gatsby-plugin-glamor": "^2.0.5",
+    "gatsby-plugin-react-helmet": "^3.0.0",
+    "gatsby-plugin-sass": "^2.0.10",
+    "gatsby-plugin-sharp": "^2.0.5",
+    "gatsby-plugin-transition-link": "^1.12.3",
     "gatsby-source-filesystem": "^2.0.23",
-    "gatsby-transformer-sharp": "^2.1.15",
-    "prop-types": "^15.7.2",
-    "react": "^16.8.3",
-    "react-dom": "^16.8.3",
-    "react-helmet": "^5.2.0"
-  },
-  "devDependencies": {
-    "prettier": "^1.16.4"
+    "gatsby-source-wordpress": "^3.0.0",
+    "gatsby-transformer-sharp": "^2.1.1",
+    "glamor": "^2.20.40",
+    "gsap": "^2.1.2",
+    "jquery": "^3.3.1",
+    "jquery.nicescroll": "^3.7.6",
+    "lodash": "^4.17.10",
+    "node-sass": "^4.11.0",
+    "react": "^16.3.2",
+    "react-dom": "^16.3.2",
+    "react-gsap": "^1.2.0",
+    "react-helmet": "^5.2.0",
+    "react-icons": "^3.4.0",
+    "react-scrollmagic": "^2.1.0",
+    "react-transition-group": "^4.0.0",
+    "react-typography": "^0.16.13",
+    "sharp": "^0.21.3",
+    "typography": "^0.16.16",
+    "typography-theme-wordpress-2013": "^0.15.10"
   },
   "keywords": [
     "gatsby"
   ],
   "license": "MIT",
+  "main": "n/a",
   "scripts": {
-    "build": "gatsby build",
+    "lint": "./node_modules/.bin/eslint --ext .js,.jsx --ignore-pattern public .",
+    "test": "echo \"Error: no test specified\" && exit 1",
     "develop": "gatsby develop",
-    "format": "prettier --write src/**/*.{js,jsx}",
-    "start": "npm run develop",
+    "build": "gatsby build",
     "serve": "gatsby serve",
-    "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\""
+    "start": "npm run develop",
+    "predeploy": "gatsby build --prefix-paths"
   },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/gatsbyjs/gatsby-starter-default"
-  },
-  "bugs": {
-    "url": "https://github.com/gatsbyjs/gatsby/issues"
+  "devDependencies": {
+    "eslint": "^4.1.1"
   }
 }

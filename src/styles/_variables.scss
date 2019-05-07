@@ -1,0 +1,166 @@
+/* This file is used for SASS Variables and Mixins,
+the primary base style for the whole application is in base.scss
+ */
+
+ @import url('https://fonts.googleapis.com/css?family=Montserrat:900'); //Temp font
+ @import url('https://fonts.googleapis.com/css?family=Poppins:400,700,900');
+ @import url('https://fonts.googleapis.com/css?family=Quicksand');
+ @import "_fonts";
+ 
+ /*Variables : based on Styleguide */
+ 
+ /*Colors*/
+ $base-color: #3b3a36; //dark color for fonts
+ $ocean-color: #b3c2bf; //blue color
+ $neutral-color: #e9ece5;
+ $neutral-light: #f3f4f0;
+ $green-color: #c0dfd9; //green color
+
+ $lightest-color: #ffffff;
+ $darkest-color: #000;
+
+ 
+ /*Input*/
+ $input-default-height:45px;
+ $input-small-height:38px;
+ 
+ /*Font*/
+ @import url('https://use.fontawesome.com/releases/v5.7.2/css/all.css');
+ @import url('https://fonts.googleapis.com/css?family=Questrial|Raleway:400,900');
+ @import url('https://fonts.googleapis.com/css?family=Raleway+Dots|Raleway:300,400,700');
+ $primary-font-family: 'Raleway';
+ $title-font-family: 'Questrial';  
+ $font-dots: 'Raleway Dots';
+
+ .bo{
+  font-family: 'Raleway', sans-serif;
+  font-weight: 700;
+}
+
+//  $title-font-family: 'Santiago';
+ 
+ /*Mixins*/
+ @mixin font-normal( $fontWeight, $fontColor) {
+   color: $fontColor;
+   font-family: $primary-font-family; 
+   font-size: 16px; 
+   font-weight: $fontWeight;
+ }
+ @mixin font-large( $fontWeight, $fontColor) {
+   color: $fontColor;
+   font-family: $primary-font-family !important;
+   font-size: 33px; 
+   font-weight: $fontWeight;
+ }
+ @mixin font-larger( $fontWeight, $fontColor) {
+   color: $fontColor;
+   font-family: $primary-font-family;
+   font-size: 66px;
+   font-weight: $fontWeight;
+ }
+ @mixin font-small( $fontWeight, $fontColor) {
+   color: $fontColor;
+   font-family: $primary-font-family !important;
+   font-size: 14px; 
+   font-weight: $fontWeight;
+ }
+ 
+ @mixin font-smaller( $fontWeight, $fontColor) {
+   color: $fontColor;
+   font-family: $primary-font-family;
+   font-size: 13px;
+   font-weight: $fontWeight;
+ }
+ @mixin font-title( $fontWeight, $fontColor) {
+    color: $fontColor;
+    font-family: $title-font-family; 
+    font-weight: $fontWeight;
+  }
+ @mixin btn-base {//Generic code for buttons
+   background: $ocean-color;
+   border-radius: 4px;
+   border:none;
+   cursor: pointer;
+   max-width: 320px;
+   outline:none;
+   text-align: center;
+   transition: all 0.25s ease-in-out;
+ 
+   &:hover{
+   }
+   &:active{
+   }
+   &:focus{
+    
+   }
+ }
+ @mixin btn-default{//Default button
+   @include btn-base();
+   @include font-normal(bold, $lightest-color);
+   padding: 10.5px 10px;
+ }
+ @mixin btn-small{//Small button for mobile
+   @include btn-base();
+   @include font-small(bold, $lightest-color);
+   padding: 8.5px 10px;
+ }
+ @mixin btn-larger{//Large button
+   @include btn-base();
+   @include font-normal(bold, $lightest-color);
+   padding: 15px 10px;
+ }
+ @mixin breakpoint($class) {
+   @if $class == xs {// Small devices (landscape phones, 576px and up)
+     @media (min-width: 576px) { @content; }
+   }
+   @else if $class == sm {// Medium devices (tablets, 768px and up)
+     @media (min-width: 768px) { @content; }
+   }
+   @else if $class == md {// Large devices (desktops, 992px and up)
+     @media (min-width: 992px) { @content; }
+   }
+   @else if $class == lg {// Extra large devices (large desktops, 1200px and up)
+     @media (min-width: 1200px) { @content; }
+   }
+   @else {
+     @warn "Breakpoint mixin supports: xs, sm, md, lg";
+   }
+ }
+ 
+ 
+ /*Components*/
+ .btn{
+   @include btn-small();
+   @include breakpoint(md) {
+     @include btn-default();
+   }
+   &--small{//modifier -
+     @include btn-small();
+   }
+   &--large{//modifier -
+     @include btn-larger();
+   }
+ 
+   //styles
+   &--light{
+     color: $base-color;
+     background: $lightest-color;
+     border: 2px solid $neutral-color;
+     &:hover, &:focus, &:active{
+       background: $lightest-color;
+       border-color: $ocean-color;
+     }
+   }
+   &--unactive{
+    background: none;
+    border:2px solid $neutral-color;
+    color: $neutral-color;
+    opacity: 0.5;
+    &:hover, &:focus, &:active{
+      background: none;
+    }
+   }
+ }
+ 
+
+ 
