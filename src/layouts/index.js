@@ -12,7 +12,7 @@ class DefaultLayout extends Component {
   componentDidMount(){
     var textDirections = [ 'down', 'right'];
     var randomNumber = Math.floor(Math.random()*textDirections.length);
-    this.randomDirection = textArray[randomNumber];
+    this.randomDirection = textDirections[randomNumber];
   }
 
   render() {
@@ -21,14 +21,31 @@ class DefaultLayout extends Component {
         <div className='header container-fluid'>
           <h1 className='header__logo'>
             <AniLink  swipe direction={this.randomDirection}  className='header__logo-link' to="/" >
-              MaVITAE
+              Marc-André D
             </AniLink>
           </h1>
-          <a className='header__menu-trigger'>M</a>
+          <input id="burger" type="checkbox" />
+          <label for="burger">
+              <span></span>
+              <span></span>
+              <span></span>
+          </label>
+          <nav className='site-navigation'>
+            <ul>
+                <li><a href="/">Home</a></li> 
+                <li><a href="/projects">Projects</a></li> 
+                <li className="mb-3"><a href="#">Download CV</a></li>
+                <p className="menu-message pb-3">Want to hire me? Contact me now via email.</p>
+                <a href="mailto:marc.andre.deschamps@gmail.com" className="button-rectangle menu-mail-item">marc.andre.deschamps@gmail.com</a>
+            </ul>
+          </nav>
         </div>
         {/* content */}
         {this.props.children}
       </div>
+    
+
+     
     )
   }
 }

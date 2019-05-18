@@ -28,17 +28,16 @@ class ProjectsTemplate extends Component {
         tl.to(this.lettersPro, 1.5, { opacity:1,scale: 1, left: 0},); //show letters Pro
         tl.to(this.letterJ, 1.5, { opacity:1, scaleX: 1}, '-=1.5'); //show letters J
         tl.to(this.lettersEcts, 1.5, { opacity:1,scale: 1, right: 0}, '-=1.5'); //show letters Ects
-        tl.to(this.projectsList, 1.5, { opacity:1,scale: 1, top: 0,  ease: "Bounce.easeOut"}, '-=1.5'); //show letters Ects
+        tl.to(this.projectsList, 1.5, { opacity:1 }, '-=1.5'); //show letters Ects
+
+        
 
         $(document).ready(function() { 
-            // $("html").niceScroll();
             $('.header__logo-link').click(function(){
-              
               $('.tl-edges').addClass('tl-edges-child--relative');
               setTimeout(function(){
                 $('.tl-edges').removeClass('tl-edges-child--relative');
               }, 1000);
-      
             })
           });
     }
@@ -56,11 +55,11 @@ class ProjectsTemplate extends Component {
                 </div>
                 <div className='projects-list' ref={div => this.projectsList = div}>
                     {data.allWordpressWpProject.edges.map(({node}) => (
-                        <div key={node.slug} className={"project-item container-fluid"} style={{  }}>
-                            <AniLink className='project-item__link' to={'project/' + node.slug} swipe top="entry"  entryOffset={80}>
+                        <div key={node.slug} className='project-item container-fluid'>
+                            <AniLink direction='right' className='project-item__link' to={'project/' + node.slug}>
                                 <h3 className='project-item__title'>{node.title}</h3>
                             </AniLink>
-                            <div className={"post-content"} dangerouslySetInnerHTML={{__html: node.excerpt}} />
+                            <div className='post-content' dangerouslySetInnerHTML={{__html: node.excerpt}} />
                         </div>
                     ))}
                 </div>

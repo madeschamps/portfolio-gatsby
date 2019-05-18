@@ -13,9 +13,17 @@ h1, .heading-1{
 h2, .heading-2{
 @include font-title(bold, $base-color);
 }
-h3{
+h3, .heading-3{
 @include font-normal(bold, $base-color);
+font-size: 20px;
 }
+a{
+    color: $base-color;
+    &:hover{
+        color: $base-color;
+    }
+}
+
 
 /*Page transition with scrollsAnims*/
 .tl-edges-child--relative > div{
@@ -54,33 +62,6 @@ h3{
 
 .tempBigIcon{
     font-size: 40px;
-}
-.header{
-    background:none;
-    padding: 20px 0px;
-    position: fixed;
-    z-index: 9999;
-
-    &__logo{
-        margin-left: 15px;
-        font-size: 23px;
-        color: $base-color;
-        display: inline-block;
-       
-       
-    }
-    &__logo-link{
-        @include font-title(normal, $base-color);
-        transition: all 0.15s ease-in;
-        &:hover{
-            text-decoration: none;
-            color: white;
-        }
-    }
-    &__menu-trigger{
-        right: 45px;
-        position: fixed;
-    }
 }
 
 
@@ -151,16 +132,21 @@ h3{
 
 /*enventually in Projects*/
 .projects-head{
-    height: 400px;
+    height: 300px;
     display: flex;
     align-items: center;
     justify-content:center;
     border-bottom: 16px solid $base-color;
+    
 
 
     &__title{
-        font-size: 200px;
-        margin-bottom: -200px;
+        transition:all 0.25s ease-in-out;
+        font-size: 75px;
+        @include breakpoint(md) {
+            font-size: 150px;
+            margin-bottom: -150px;
+        }
     }
     &__title--pro{
         transform: scale(1.5);
@@ -181,9 +167,11 @@ h3{
 }
 .projects-list{
     position: relative;
-    top: -100px;
+    background: $base-color;
+   
 }
 .project-item{
+    opacity: 0;
     align-items: center;
     background: $base-color;
     border-bottom: 1px solid gray;
@@ -215,10 +203,29 @@ h3{
         width: 100%;
         background: rgba(59, 58, 54, 0.8);
     }
+
+    @for $i from 1 through 10 {
+        &:nth-child( #{$i} ) {
+          -webkit-animation: slideIn .75s #{$i * 0.25}s ease 1 forwards;
+          -moz-animation: slideIn .75s #{$i * 0.25}s ease 1 forwards;
+         animation: slideIn .75s #{$i * 0.25}s ease 1 forwards; 
+        }
+      }
+      
+    
 }
 
-
-
+@keyframes slideIn {
+    0% {
+        opacity: 0;
+        left: -300px;
+    }
+    100% {
+        opacity: 1;
+        left: 0px;
+    }
+}
 
 @import "landing";
+@import "nav";
 
