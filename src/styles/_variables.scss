@@ -109,6 +109,8 @@ the primary base style for the whole application is in base.scss
    @include font-normal(bold, $lightest-color);
    padding: 15px 10px;
  }
+
+ 
  @mixin breakpoint($class) {
    @if $class == xs {// Small devices (landscape phones, 576px and up)
      @media (min-width: 576px) { @content; }
