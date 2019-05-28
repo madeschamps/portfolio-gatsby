@@ -1,7 +1,7 @@
 module.exports = {
   siteMetadata: {
-    title: `A sample site using gatsby-source-wordpress`,
-    subtitle: `Data fetched from a site hosted on wordpress.com`,
+    title: `Marc-Andre Deschamps Portfoliio`,
+    subtitle: `WordPress API`,
   },
   pathPrefix: "/portfolio",
   plugins: [

@@ -198,7 +198,7 @@ class Home extends Component {
                   <div className='scene2 container-fluid h-100vh '>
                     <div className='row h-100 align-items-center justify-content-center'>
                       <div className='col-md-12 text-center'>
-                        <AniLink paintDrip hex="#3b3a36" to="/projects" className="scene2__link d-inline-block mb-3">SEE MY RECENT WORK</AniLink>
+                        <AniLink paintDrip hex="#3b3a36" to="projects" className="scene2__link d-inline-block mb-3">SEE MY RECENT WORK</AniLink>
                         <span className="d-block mb-2">Need a developer? Contact here</span>
                         <a className="heading-3 clr-base text-weight-strong" href="mailto:marc.andre.deschamps@gmail.com">marc.andre.deschamps@gmail.com</a>
                       </div>
@@ -216,7 +216,7 @@ class Home extends Component {
                   <div>
                     <div className='d-block mb-4'>
                       <h2 className='d-block mb-4 textc-primary'>Find me here also</h2>
-                      <a href="#" target="_blank" className='scene3__link textc-primary'><i className="tempBigIcon fab fa-linkedin mr-3"></i></a>
+                      <a href="https://www.linkedin.com/in/marc-andre-deschamps/" target="_blank" className='scene3__link textc-primary'><i className="tempBigIcon fab fa-linkedin mr-3"></i></a>
                       <a href="#" target="_blank" className='scene3__link textc-primary'><i className="tempBigIcon fab fa-github mr-3"></i></a>
                     </div>
                   </div>
