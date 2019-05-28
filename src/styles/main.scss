@@ -101,17 +101,18 @@ a{
         font-size:50px;
     }
     &:before{//corner
-        content:'';
-        background: linear-gradient(to right bottom, #e9ece5 50%, #f3f4f0 50%);
+        // content:'';
+        // background: linear-gradient(to right bottom, #e9ece5 50%, #f3f4f0 50%);
         // background: #e9ece5;
-        bottom: -150px;
-        height: 150px;
-        left: 0px;
-        position: absolute;
-        width: 100%;
-        width: 100%;
-        z-index: 22;
+        // bottom: -150px;
+        // height: 150px;
+        // left: 0px;
+        // position: absolute;
+        // width: 100%;
+        // width: 100%;
+        // z-index: 22;
     }
+   
 }
 .h-100vh{
     height: 100vh;
