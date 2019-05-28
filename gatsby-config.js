@@ -41,6 +41,9 @@ module.exports = {
         path: `${__dirname}/src/pages/`,
       },
     },
+    module.exports = {
+      pathPrefix: "/madeschamps/portfolio/",
+    },
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
     `gatsby-plugin-glamor`

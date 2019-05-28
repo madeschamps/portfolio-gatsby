@@ -33,22 +33,10 @@ class Home extends Component {
   componentDidMount(){
 
     //Eases: https://easings.net/
-   
     $(document).ready(function() { 
-      // // $("html").niceScroll();
-      // $('.header__logo-link').click(function(){
-      //   console.log('cok');
-      //   $('.tl-edges').addClass('tl-edges--relative');
-      //   setTimeout(function(){
-      //     $('.tl-wrapper').removeClass('tl-edges--relative');
-      //   }, 3000);
-
-      // })
-
+   
     });
-
     
-
     // instantiate a TimelineLite    
     var tl = new TimelineLite(); 
 
