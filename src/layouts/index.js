@@ -34,7 +34,7 @@ class DefaultLayout extends Component {
             <ul>
                 <li><a href="/">Home</a></li> 
                 <li><Link to="projects">Projects</Link></li> 
-                <li className="mb-3"><a href="#">Download CV</a></li>
+                <li className="mb-3"><a href="https://docdro.id/Jpw6BfH">Download CV</a></li>
                 <p className="menu-message pb-3">Want to hire me? Contact me now via email.</p>
                 <a href="mailto:marc.andre.deschamps@gmail.com" className="button-rectangle menu-mail-item">marc.andre.deschamps@gmail.com</a>
             </ul>
