@@ -8,4 +8,4 @@
   Marc-André Deschamps's Gatsby Portfolio
 </h1>
 
-React Portfolio with WordPress API
+<p align="center">React Portfolio with WordPress API</p>
