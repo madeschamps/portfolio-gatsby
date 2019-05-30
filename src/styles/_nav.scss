@@ -1,5 +1,8 @@
 .header{
-    background:none;
+    background:rgba(179, 194, 191, 0.7);
+    @include breakpoint(md) {
+      background: none;
+    }
     padding: 20px 0px;
     position: fixed;
     width: 100%;
@@ -12,8 +15,6 @@
         display: inline-block;
         position: relative;
         z-index: 4;
-       
-       
     }
     &__logo-link{
         @include font-title(normal, $base-color);
@@ -36,7 +37,7 @@
 }
 input + label {
     position: fixed;
-    top: 40px;
+    top: 25px;
     right: 40px;
     height: 20px;
     width: 15px; 
@@ -101,8 +102,12 @@ input + label {
     }
     > ul {
       position: absolute;
-      top: 15%;
-      left: 20%;
+      top: 50px;
+      left: 30px;
+      @include breakpoint(md) {
+        top: 15%;
+        left: 20%;
+      }
       right: 20%;
       > li {
         opacity: 0;
@@ -171,9 +176,14 @@ input + label {
     border: 3px solid $base-color;
     color: $base-color;
     font-family: $title-font-family;
-    font-size: 21px;
-    font-size: 25px;
-    padding: 10px 20px;
+    font-size: 15px;
+    padding: 5px 10px;
+   
+    @include breakpoint(md) {
+      font-size: 25px;
+      padding: 10px 20px;
+    }
+   
     padding: 20px;
     text-decoration: none;
     transition: 0.25s ease-in all;

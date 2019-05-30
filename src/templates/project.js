@@ -16,7 +16,7 @@ class ProjectTemplate extends Component {
           </div>
           <div className='row justify-content-center'>
             <div className='col-md-6 text-center'>
-              <p>Kevin's Website been made with WordPress. More details and link to come soon.</p>
+              <p>Kevin's Website made with WordPress. More details and link to come soon..</p>
               <img className='img-fluid' src="https://i.ibb.co/58FBj4N/kevinsiteimg1.png" />
             </div>
           </div>

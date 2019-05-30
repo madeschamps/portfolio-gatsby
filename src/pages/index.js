@@ -217,7 +217,7 @@ class Home extends Component {
                     <div className='d-block mb-4'>
                       <h2 className='d-block mb-4 textc-primary'>Find me here also</h2>
                       <a href="https://www.linkedin.com/in/marc-andre-deschamps/" target="_blank" className='scene3__link textc-primary'><i className="tempBigIcon fab fa-linkedin mr-3"></i></a>
-                      <a href="#" target="_blank" className='scene3__link textc-primary'><i className="tempBigIcon fab fa-github mr-3"></i></a>
+                      {/* <a href="#" target="_blank" className='scene3__link textc-primary'><i className="tempBigIcon fab fa-github mr-3"></i></a> */}
                     </div>
                   </div>
                 </div>
