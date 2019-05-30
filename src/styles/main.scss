@@ -31,6 +31,10 @@ a{
 }
 .tl-wrapper{//removes issues for scrollMagicAnimations
     position: absolute;
+    overflow: hidden;
+    @include breakpoint(md) {
+        overflow: auto;
+    }
 }
 
 
@@ -169,6 +173,11 @@ a{
 .projects-list{
     position: relative;
     background: $base-color;
+    height: 100vh;
+    @include breakpoint(md) {
+        height: auto;
+    }
+   
 }
 .project-item{
     opacity: 0;
