@@ -22,7 +22,7 @@ class ProjectTemplate extends Component {
               <img className='img-fluid mb-4' src="https://i.gyazo.com/768efa3442c6886ab15f743609496be4.gif" alt="Kv Tattoo"/>
             </div>
             <div className='col-md-6 text-center'>
-              <img className='img-fluid' src="https://i.gyazo.com/17997bd47af0cc123440519e8fa0ca88.gif" alt="Kv Tattoo" />
+              <img className='img-fluid mb-3' src="https://i.gyazo.com/17997bd47af0cc123440519e8fa0ca88.gif" alt="Kv Tattoo" />
               <h2>2019</h2>
             </div>
           </div>
