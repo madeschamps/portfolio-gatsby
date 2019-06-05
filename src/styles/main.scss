@@ -136,6 +136,17 @@ a{
 }
 
 /*enventually in Projects*/
+.project-head{
+    height: 300px;
+    display: flex;
+    align-items: center;
+    justify-content:center;
+    padding: 30px;
+    padding-top: 100px;
+    &__title{
+        transition:all 0.25s ease-in-out;
+    }
+}
 .projects-head{
     height: 300px;
     display: flex;
