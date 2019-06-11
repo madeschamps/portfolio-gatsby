@@ -1,7 +1,6 @@
 import React, { Component } from "react"
 import { graphql } from "gatsby"
 import Link from "gatsby-plugin-transition-link";
-import { FaRegClock } from "react-icons/fa"
 import {TimelineLite} from "gsap/TweenMax";
 import { Controller, Scene } from 'react-scrollmagic';
 import { Tween, Timeline } from 'react-gsap';
@@ -198,7 +197,7 @@ class Home extends Component {
                   <div className='scene2 container-fluid h-100vh '>
                     <div className='row h-100 align-items-center justify-content-center'>
                       <div className='col-md-12 text-center'>
-                        <AniLink paintDrip hex="#3b3a36" to="projects" className="scene2__link d-inline-block mb-3">SEE MY RECENT WORK</AniLink>
+                        <AniLink fade to="projects" className="scene2__link d-inline-block mb-3">SEE MY RECENT WORK</AniLink>
                         <span className="d-block mb-2">Need a developer? Contact here</span>
                         <a className="heading-3 clr-base text-weight-strong" href="mailto:marc.andre.deschamps@gmail.com">marc.andre.deschamps@gmail.com</a>
                       </div>
