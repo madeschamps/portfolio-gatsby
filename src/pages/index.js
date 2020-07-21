@@ -174,7 +174,7 @@ class Home extends Component {
                       ease="Strong.easeOut"
                       totalProgress={progress}
                       paused>    
-                    <h2 className='scene1__webDev font-normal'>I am a web developper from Montreal, that just recently moved to London  I am looking for a new opportuniy to work on driven projects with dynamic team</h2>
+                    <h2 className='scene1__webDev font-normal'>I am a web developper from Montreal, I have been living in London UK for a Year. I am always looking for new challenges</h2>
                   </Tween> 
                   )} 
                 </Scene>
@@ -184,7 +184,7 @@ class Home extends Component {
               <Controller>
                 <Scene triggerElement="#triggerS1FrontTxt"  classToggle="scene1__frontdev--animation">
                   {(progress, event) => (   
-                      <span className='font-dots scene1__frontdev'>FRONT-END DEVELOPPER</span>
+                      <span className='font-dots scene1__frontdev'>WEB DEVELOPPER</span>
                     )}
                   </Scene> 
               </Controller>
@@ -199,6 +199,7 @@ class Home extends Component {
                     <div className='row h-100 align-items-center justify-content-center'>
                       <div className='col-md-12 text-center'>
                         <AniLink paintDrip hex="#3b3a36" to="/projects" className="scene2__link d-inline-block mb-3">SEE MY RECENT WORK</AniLink>
+                        <p className="d-block mb-2">I speak/Write English, Français y Español</p>
                         <span className="d-block mb-2">Need a developer? Contact here</span>
                         <a className="heading-3 clr-base text-weight-strong" href="mailto:marc.andre.deschamps@gmail.com">marc.andre.deschamps@gmail.com</a>
                       </div>
